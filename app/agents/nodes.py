@@ -90,7 +90,7 @@ def suggested_reply_node(state: InboxState) -> InboxState:
     Intent: {state["intent"]}
     Sentiment: {state["sentiment"]}
     Knowledge base: {context}
-    Generate 2 short, polite, professional reply suggestions.
+    Generate 1 short, polite, professional reply suggestion.
     """
 
     print("suggested_reply_node msg_prompt", prompt)
