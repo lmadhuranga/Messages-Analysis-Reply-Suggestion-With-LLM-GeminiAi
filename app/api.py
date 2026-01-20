@@ -42,7 +42,7 @@ def health_check() -> dict:
 
 @app.get("/")
 def root() -> dict:
-    return {"message": "Hello World"}
+    return {"message": "Message Sorting AI Assistant backend is running"}
 
 
 @app.post("/analyze", response_model=AnalyzeResponse, dependencies=[Depends(require_api_key)])
