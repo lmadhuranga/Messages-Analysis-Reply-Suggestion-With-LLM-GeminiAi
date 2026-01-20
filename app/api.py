@@ -40,6 +40,11 @@ def health_check() -> dict:
     return {"status": "ok"}
 
 
+@app.get("/")
+def root() -> dict:
+    return {"message": "Hello World"}
+
+
 @app.post("/analyze", response_model=AnalyzeResponse, dependencies=[Depends(require_api_key)])
 def analyze(request: AnalyzeRequest) -> AnalyzeResponse:
     result = app_graph.invoke(
