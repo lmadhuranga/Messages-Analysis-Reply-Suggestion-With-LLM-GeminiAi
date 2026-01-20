@@ -32,7 +32,7 @@ Setup
 -----
 1) Create a `.env` file with your API keys:
    `GOOGLE_API_KEY=your_key_here`
-   `API_KEY=your_api_key_here`
+   `AI_API_KEY=your_api_key_here`
 2) Create a virtual environment and install dependencies:
    `uv venv`
    `uv pip install -r requirement.txt`
@@ -57,13 +57,13 @@ Docker
 ------
 Create `.env` in the repo root:
 `GOOGLE_API_KEY=your_key_here`
-`API_KEY=your_api_key_here`
+`AI_API_KEY=your_api_key_here`
 
 Build:
 `docker build -t treema-ai .`
 
 Run:
-`docker run --rm -p 8000:8000 -e GOOGLE_API_KEY=your_key_here -e API_KEY=your_api_key_here treema-ai`
+`docker run --rm -p 8000:8000 -e GOOGLE_API_KEY=your_key_here -e AI_API_KEY=your_api_key_here treema-ai`
 
 Compose (foreground):
 `docker compose up --build`
@@ -76,3 +76,12 @@ Stop Compose:
 
 Check logs (background):
 `docker compose logs -f`
+
+Vercel
+------
+1) Ensure `requirements.txt` exists (already included) and commit `vercel.json`.
+2) In Vercel project settings, set environment variables:
+   `GOOGLE_API_KEY=your_key_here`
+   `AI_API_KEY=your_api_key_here`
+3) Deploy the repo in Vercel. The API will be available at:
+   `https://<your-app>.vercel.app/analyze`

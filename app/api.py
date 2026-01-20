@@ -8,12 +8,12 @@ from app.agents.graph import app_graph
 
 
 app = FastAPI(title="Treema-Ai API")
-API_KEY = os.getenv("API_KEY")
+API_KEY = os.getenv("AI_API_KEY")
 
 
 def require_api_key(x_api_key: str = Header(..., alias="X-API-Key")) -> None:
     if not API_KEY:
-        raise HTTPException(status_code=500, detail="API_KEY is not configured")
+        raise HTTPException(status_code=500, detail="AI_API_KEY is not configured")
     if x_api_key != API_KEY:
         raise HTTPException(status_code=401, detail="Invalid API key")
 
