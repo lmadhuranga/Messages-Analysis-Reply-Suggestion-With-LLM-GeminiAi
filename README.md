@@ -41,6 +41,11 @@ Run
 ---
 `python main.py`
 
+Ports
+-----
+- API server runs on port 8000 (http://127.0.0.1:8000).
+- Docker/Docker Compose publish container port 8000 to host port 8000.
+
 API
 ---
 Start the server:
